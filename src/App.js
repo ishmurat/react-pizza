@@ -6,11 +6,13 @@ function App() {
   return (
     <div>
       <div className="wrapper">
-        <Header /> 
+        <Header />
         <div className="content">
           <div className="container">
             <div className="content__top">
-              <Categories />
+              <Categories
+                onClickItem={(name) => console.log(name)}
+                items={['Мясные', 'Вегетарианские', 'Гриль', 'Острые', 'Закрытые']} />
               <div className="sort">
                 <div className="sort__label">
                   <svg
