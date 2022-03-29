@@ -5,15 +5,19 @@ function Categories({ items, onClickItem }) {
 
   // const activeItem = state[0];
   // const setActiveItem = state[1];
-const onSelectItem = (index) => {
-  setActiveItem(index);
-}
+  const onSelectItem = (index) => {
+    setActiveItem(index);
+  }
 
 
   return (
     <div className="categories">
       <ul>
-        <li>Все</li>
+        <li
+          className={activeItem === null ? 'active' : ''}
+          onClick={() => onSelectItem(null)}>
+          Все
+        </li>
         {items.map((name, index) => (
           <li
             className={activeItem === index ? 'active' : ''}
