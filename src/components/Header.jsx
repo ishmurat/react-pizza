@@ -1,5 +1,5 @@
 import React from "react";
-
+import {Link} from "react-router-dom";
 import logoSvg from '../assets/img/pizza-logo.svg';
 import Button from "./Button";
 
@@ -14,7 +14,7 @@ function Header() {
                         <p>самая вкусная пицца во вселенной</p>
                     </div>
                 </div>
-                <div className="header__cart">
+                <div className="header__cart"> 
                     <Button className="button--cart">
                         <span>520 ₽</span>
                         <div className="button__delimiter"></div>
