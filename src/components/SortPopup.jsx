@@ -8,7 +8,7 @@ function SortPopup({items}) {
         setVisiblePopup(!visiblePopup);
     };
 
-    const activeLabel = items[activeItem];
+    const activeLabel = items[activeItem].name;
 
     const handleOutsideClick = (e) => {
         if (!e.path.includes(sortRef.current)) {
@@ -51,13 +51,13 @@ function SortPopup({items}) {
             </div>
             {visiblePopup && (<div className="sort__popup">
                 <ul>
-                    {items.map((name, index) => (
+                    {items.map((obj, index) => (
                         <li
                             onClick={() => onSelectItem(index)}
                             className={activeItem === index ? 'active' : ''} 
-                            key={`${name}_${index}`}
+                            key={`${obj.type}_${index}`}
                         >
-                            {name}
+                            {obj.name}
                         </li>
                     ))}
                 </ul>
