@@ -6,37 +6,41 @@ import { Home, Cart } from './pages';
 import { Route, Routes } from 'react-router-dom';
 
 
-function App() {
-  const [pizzas, setPizzas] = React.useState([]);
+// function App() {
+//   React.useEffect(() => {
+//     // без axios
+//     // fetch('http://localhost:3000/db.json') 
+//     //   .then((resp) => resp.json())
+//     //   .then((json) => {
+//     //     setPizzas(json.pizzas);
+//     //   });
+//     axios.get('http://localhost:3000/db.json').then(({ data }) => {
+//       setPizzas(data.pizzas);
+//     });
+//   }, []);
 
-  React.useEffect(() => {
-    // без axios
-    // fetch('http://localhost:3000/db.json') 
-    //   .then((resp) => resp.json())
-    //   .then((json) => {
-    //     setPizzas(json.pizzas);
-    //   });
+//   return ;
+// }
+
+class App extends React.Component {
+  componentDidMount() {
     axios.get('http://localhost:3000/db.json').then(({ data }) => {
-      setPizzas(data.pizzas);
+      console.log(data.pizzas);
     });
-  }, []);
-
-  return (
-    <div>
+  };
+  render() {
+    return (
       <div className="wrapper">
         <Header />
         <div className="content">
           <Routes>
-            <Route path="/" element={<Home items={pizzas} />} exact />
+            <Route path="/" element={<Home items={[]} />} exact />
             <Route path='/cart' element={<Cart />} exact />
           </Routes>
-
-
-
         </div>
       </div>
-    </div>
-  );
+    )
+  }
 }
 
 export default App;
