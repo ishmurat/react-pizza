@@ -5,7 +5,7 @@ import { Categories, PizzaBlock, SortPopup } from '../components';
 
 
 function Home() {
-   const items = useSelector(({ pizzas }) => pizzas.sortBy);
+   const items = useSelector(({ pizzas }) => pizzas.items); 
        const hr = useSelector(state => state);
        console.log(hr)
   return (

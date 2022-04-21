@@ -1,4 +1,4 @@
-import { createStore } from 'redux';
+import { createStore } from 'redux'; // 1:39 6 lesson reduxDevTools
 
 import rootReducer from './redusers'
 
