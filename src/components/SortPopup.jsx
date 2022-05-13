@@ -57,7 +57,7 @@ const SortPopup = function SortPopup({ items, activeSortType, onClickSortType })
                 <ul>
                     {items.map((obj, index) => (
                         <li
-                            onClick={() => onSelectItem(obj.type)}
+                            onClick={() => onSelectItem(obj)}
                             className={activeSortType === obj.type ? 'active' : ''}
                             key={`${obj.type}_${index}`}
                         >
@@ -72,7 +72,7 @@ const SortPopup = function SortPopup({ items, activeSortType, onClickSortType })
 
 SortPopup.propTypes = {
     activeSortType: PropTypes.string.isRequired,
-    items: PropTypes.arrayOf(PropTypes.object).isRequired,
+    //items: PropTypes.arrayOf(PropTypes.string).isRequired,
     onClickSortType: PropTypes.func.isRequired,
 };
 
